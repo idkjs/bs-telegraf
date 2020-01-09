@@ -8,5 +8,5 @@ module Message = {
   }
   and first_name = string;
   let format = (m): string =>
-    "[" ++ m##date ++ "] <" ++ m##from##first_name ++ "> " ++ m##text;
+    "[" ++ m.date ++ "] <" ++ m.from ++ "> " ++ m.text;
 };

@@ -6,10 +6,10 @@
     "clean": "bsb -clean-world",
     "build": "yarn build:bsb && yarn build:js",
     "build:bsb": "yarn bsb -clean-world -make-world",
-    "build:js": "parcel build lib/js/src/index.js --target=node --bundle-node-modules --no-minify",
+    "build:js": "parcel build lib/js/example/Demo.bs.js --target=node --bundle-node-modules --no-minify",
     "dev": "run-p dev:*",
     "dev:bsb": "yarn bsb -clean-world -make-world -w",
-    "dev:nodemon": "yarn nodemon ./lib/js/src/index.js"
+    "dev:nodemon": "yarn nodemon ./lib/js/example/Demo.bs.js"
   },
   "keywords": [
     "BuckleScript"
@@ -20,7 +20,8 @@
     "@babel/cli": "7.7.7",
     "@babel/core": "7.7.7",
     "@babel/preset-env": "7.7.7",
-    "bs-platform": "^7.0.2-dev.1"
+    "bs-platform": "^7.0.2-dev.1",
+    "parcel": "2.0.0-alpha.3.2"
   },
   "dependencies": {
     "@ahrefs/bs-dotenv": "2.0.0",

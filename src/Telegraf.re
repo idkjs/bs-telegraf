@@ -21,7 +21,9 @@ module Bot = {
   [@bs.send.pipe: t]
   external command: (string, Context.middleware) => t = "command";
   [@bs.send.pipe: t]
-  external hears: (Js.Re.t, Context.middleware) => t = "hears";
+  external hears: (string, Context.middleware) => t = "hears";
+  // [@bs.send.pipe: t]
+  // external hears: (Js.Re.t, Context.middleware) => t = "hears";
   [@bs.send.pipe: t] external startPolling: t = "startPolling";
   [@bs.send.pipe: t] external stop: t = "stop";
   [@bs.send.pipe: Context.t] external reply: string => unit = "reply";
