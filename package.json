@@ -2,9 +2,14 @@
   "name": "bs-telegraf",
   "version": "0.1.0",
   "scripts": {
-    "build": "bsb -make-world",
     "start": "bsb -make-world -w",
-    "clean": "bsb -clean-world"
+    "clean": "bsb -clean-world",
+    "build": "yarn build:bsb && yarn build:js",
+    "build:bsb": "yarn bsb -clean-world -make-world",
+    "build:js": "parcel build lib/js/src/index.js --target=node --bundle-node-modules --no-minify",
+    "dev": "run-p dev:*",
+    "dev:bsb": "yarn bsb -clean-world -make-world -w",
+    "dev:nodemon": "yarn nodemon ./lib/js/src/index.js"
   },
   "keywords": [
     "BuckleScript"
@@ -12,6 +17,17 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "7.7.7",
+    "@babel/core": "7.7.7",
+    "@babel/preset-env": "7.7.7",
     "bs-platform": "^7.0.2-dev.1"
+  },
+  "dependencies": {
+    "telegraf": "3.35.0",
+    "dotenv": "^8.2.0",
+    "funfix": "^7.0.1",
+    "node-noop": "^1.0.0",
+    "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5"
   }
 }
